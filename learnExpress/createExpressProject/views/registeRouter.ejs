@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h2>在express中注册其他路由文件</h2>
+<ul>
+    <li>
+        <h4>通过以下方式来实现：</h4>
+        <p>在app.js中添加： <br> app.use('/', indexRouter); <br>
+            app.use('/users', usersRouter);</p>
+    </li>
+    <li>
+        <h4>users.js路由文件的写法</h4>
+        <p>var express = require('express'); <br>
+            var router = express.Router(); <br>
+            <br>
+            /* GET users listing. */  <br>
+            router.get('/', function(req, res, next) { <br>
+            res.send('respond with a resource'); <br>
+            }); <br>
+            <br>
+            <br>
+            router.get('/registeRouter',function(req,res){ <br>
+            res.render("registeRouter",{"title":"registRouter"}); <br>
+            }); <br>
+            <br>
+            module.exports = router;</p>
+    </li>
+</ul>
+</body>
+</html>
